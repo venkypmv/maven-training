@@ -20,7 +20,7 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
     </flow>
     
     <flow name="retrieveFlights">
-        <http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/>
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/flights" />
         <db:select config-ref="Derby_Configuration" doc:name="Database">
             <db:dynamic-query><![CDATA[SELECT * FROM FLIGHTS]]></db:dynamic-query>
         </db:select>
